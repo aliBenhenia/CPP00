@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:06:45 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/04 12:39:24 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/04 18:48:36 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void PhoneBook :: printIntro()
     int i = 0;
     int id = -1;
     int flag = -1;
-    std :: string dd;
+    std :: string input;
 
     if (contacts[i].isEmpty() == 0)
     {
@@ -55,8 +55,9 @@ void PhoneBook :: printIntro()
         i++;
     }
     std :: cout << "enter id : ";
-    std :: cin >> id;
-    std :: cin.ignore();
+    std :: getline(std :: cin, input);
+    std :: istringstream myId(input);
+    myId >> id;
     i = 0;
     while (i < 8)
     {
