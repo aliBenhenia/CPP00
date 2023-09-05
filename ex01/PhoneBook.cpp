@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:06:45 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/04 18:48:36 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/05 09:17:36 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ void PhoneBook :: printIntro()
     }
     std :: cout << "enter id : ";
     std :: getline(std :: cin, input);
+    if (contacts[0].checkNumber(input) == 0)
+    {
+        std :: cout << "invalid id\n";
+        return ;
+    }
     std :: istringstream myId(input);
     myId >> id;
     i = 0;
