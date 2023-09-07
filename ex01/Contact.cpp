@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:43:44 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/04 12:04:30 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:42:44 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void Contact :: fillData(int i)
     {
         std :: cout << "enter phone number : ";
         getline(std :: cin , phoneNumber);
+        if (std :: cin.eof())
+            exit(1);
         if (checkNumber(phoneNumber) && phoneNumber[0] != '\0')
             break;
         else
@@ -28,6 +30,15 @@ void Contact :: fillData(int i)
     }
    fillDarkestsecret();
    id = i;
+}
+
+void Contact :: getLineProtected(std :: string input, std :: string out)
+{
+    std :: cout << out;
+    getline(std :: cin , input);
+    if (std :: cin.eof())
+        exit(1);
+    
 }
 
 int Contact :: checkNumber(std :: string n)
@@ -40,14 +51,15 @@ int Contact :: checkNumber(std :: string n)
     return 0;
 }
 
-int Contact :: onlySpaces(std :: string s)
+int Contact :: checkSpaces(std :: string s)
 {
     int i = 0;
-    while (s[i] && (s[i] == 32 || s[i] == '\t'))
+    while (s[i])
+    {
+        if (s.at(i) == 32 || s.at(i) == '\t')
+            return 1;
         i++;
-    if (s[i] == '\0')
-        return 1;
-    
+    }
     return 0;
 }
 
@@ -56,8 +68,10 @@ void  Contact :: fillFirstName()
     while (1)
     {
         std :: cout << "enter first name : ";
-        getline(std :: cin , firstName);
-        if (firstName[0] == '\0' || onlySpaces(firstName))
+        getline(std ::cin, firstName);
+        if (std :: cin.eof())
+            exit(1);
+        if (firstName[0] == '\0' || checkSpaces(firstName))
             std :: cout << "emppty field ...try again\n";
         else
             break;
@@ -70,7 +84,9 @@ void  Contact :: fillLasttName()
     {
         std :: cout << "enter last name : ";
         getline(std :: cin , lastName);
-        if (lastName[0] == '\0' || onlySpaces(lastName))
+        if (std :: cin.eof())
+            exit(1);
+        if (lastName[0] == '\0' || checkSpaces(lastName)) 
             std :: cout << "emppty field ...try again\n";
         else
             break;
@@ -83,7 +99,9 @@ void  Contact :: fillNicktName()
     {
         std :: cout << "enter nick name: ";
         getline(std :: cin , nickname);
-        if (nickname[0] == '\0' || onlySpaces(nickname))
+        if (std :: cin.eof())
+            exit(1);
+        if (nickname[0] == '\0' || checkSpaces(nickname))
             std :: cout << "emppty field ...try again\n";
         else
             break;
@@ -96,7 +114,9 @@ void  Contact :: fillDarkestsecret()
     {
         std :: cout << "enter darkset secret : ";
         getline(std :: cin , darkestSecret);
-        if (darkestSecret[0] == '\0' || onlySpaces(darkestSecret))
+        if (std :: cin.eof())
+            exit(1);
+        if (darkestSecret[0] == '\0' || checkSpaces(darkestSecret))
             std :: cout << "emppty field ...try again\n";
         else
             break;
@@ -110,7 +130,7 @@ void Contact :: printBlock(std :: string s)
     {
         if (s[i] && i == 9)
             std :: cout << ".";
-        else if (s[i]&& s[i]  != '\t')// 
+        else if (s[i]&& s[i]  != '\t')
             std :: cout << s[i];
         else
             std :: cout << " ";
@@ -146,11 +166,11 @@ int Contact :: getId()
 
 void Contact :: printInfo()
 {
-    std :: cout << firstName << "\n";
-    std :: cout << lastName << "\n";
-    std :: cout << nickname << "\n";
-    std :: cout << phoneNumber << "\n";
-    std :: cout << darkestSecret << "\n";
+    std :: cout << "first name : " <<firstName << "\n";
+    std :: cout << "last name : " <<lastName << "\n";
+    std :: cout << "nick name : " <<nickname << "\n";
+    std :: cout << "phone number : " <<phoneNumber << "\n";
+    std :: cout << "darkset secret : " <<darkestSecret << "\n";
 }
 
 void Contact :: clearContent()

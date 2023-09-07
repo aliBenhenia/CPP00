@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:06:59 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/04 11:40:35 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:39:59 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int main()
     {
         std :: cout << "-> ";
         getline(std:: cin, input);
+        if (std :: cin.eof())
+            exit(1);
         if (input.compare("EXIT") == 0)
             exit(1);
         else if (input.compare("ADD") == 0)

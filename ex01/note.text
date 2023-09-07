@@ -1,1 +1,0 @@
-Error State Flags: When you use cin to read input, the input stream keeps track of various error states that might occur during input operations. These error states can include things like trying to read a non-integer when expecting an integer or reaching the end of a file unexpectedly.
