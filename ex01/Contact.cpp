@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:43:44 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/07 14:42:44 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:32:00 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void Contact :: getLineProtected(std :: string input, std :: string out)
     getline(std :: cin , input);
     if (std :: cin.eof())
         exit(1);
-    
 }
 
 int Contact :: checkNumber(std :: string n)
@@ -125,17 +124,23 @@ void  Contact :: fillDarkestsecret()
 
 void Contact :: printBlock(std :: string s)
 {
-    int i = 0;
-    while (i < 10)
-    {
-        if (s[i] && i == 9)
-            std :: cout << ".";
-        else if (s[i]&& s[i]  != '\t')
-            std :: cout << s[i];
-        else
-            std :: cout << " ";
-        i++;
-    }
+    // int i = 0;
+    // while (i < 10)
+    // {
+    //     if (s[i] && i == 9)
+    //         std :: cout << ".";
+    //     else if (s[i]&& s[i]  != '\t')
+    //         std :: cout << s[i];
+    //     else
+    //         std :: cout << " ";
+    //     i++;
+    // }
+    if (s.length() > 10)
+        std :: cout << s.substr(0,9) << ".";
+    else if (s.length() == 10)
+         std :: cout << s.substr(0,10);
+    else if (s.length() < 10)
+         std :: cout << std :: setw((10 - s.length())) << "" << s;//<< std :: right 
     std :: cout << "|";
 }
 
@@ -143,8 +148,7 @@ int  Contact :: print()
 {
     if (firstName.empty())
         return (0);
-    std :: cout << "|";
-    std :: cout << id << "         |";
+    std :: cout << "|" << std :: setw(10) << id << "|";
     printBlock(firstName);
     printBlock(lastName);
     printBlock(nickname);

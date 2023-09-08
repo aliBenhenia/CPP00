@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:06:45 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/07 10:34:12 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:53:03 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void PhoneBook :: addIinfo()
         return;
     }
     std :: cout << "+----------+----------+----------+----------+\n";
-    std :: cout << "| id       |first name|last name |nick name |\n";
+    std :: cout << "|        id|first name| last name| nick name|\n";
     std :: cout << "+----------+----------+----------+----------+\n";
     while (i < 8)
     {
@@ -56,6 +56,8 @@ void PhoneBook :: addIinfo()
     }
     std :: cout << "enter id : ";
     std :: getline(std :: cin, input);
+    if (std :: cin.eof())
+        exit(1);
     if (contacts[0].checkNumber(input) == 0 || input.empty())
     {
         std :: cout << "invalid id\n";
