@@ -6,14 +6,15 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:06:52 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/08 10:00:30 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/09 12:47:09 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
+
 #include <iostream>
 #include <string>
-#include <sstream>
-#include <fstream>
 #include <iomanip>
 #include "Contact.hpp"
 class PhoneBook
@@ -25,6 +26,8 @@ class PhoneBook
         void addIinfo();
         void search();
 };
+
+#endif
 
 
 

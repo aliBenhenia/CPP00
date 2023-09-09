@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:06:45 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/08 11:53:03 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/09 14:32:02 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,25 @@ void PhoneBook :: printIntro()
 }
 
 void PhoneBook :: addIinfo()
- {
+{
      static int i;
-     if (i < 8)
+
+     if (i < 8 && i > -1)
      {
         contacts[i].fillData(i + 1);
         i++;
      }
      else
      {
-        contacts[7].clearContent();
-        contacts[7].fillData(8);
+        if (i > 2147483647)
+            i = 8;
+        contacts[i % 8].clearContent();
+        contacts[i % 8].fillData((i % 8) + 1);
+        i++;
      }
- }
- 
- void PhoneBook :: search()
+}
+
+void PhoneBook :: search()
 {
     int i = 0;
     int id = -1;

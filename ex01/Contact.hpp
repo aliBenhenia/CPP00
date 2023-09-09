@@ -6,13 +6,16 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:06:43 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/07 14:16:27 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/09 12:44:39 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+
 #include <iostream>
 #include <string>
-#include <fstream>
+#include <iomanip>
 class Contact {
     private :
         std :: string firstName;
@@ -37,3 +40,5 @@ class Contact {
         void clearContent();
         void getLineProtected(std :: string input , std :: string out);
 };
+
+#endif

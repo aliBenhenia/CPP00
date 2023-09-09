@@ -6,14 +6,14 @@
 #    By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 12:49:58 by abenheni          #+#    #+#              #
-#    Updated: 2023/09/03 18:26:51 by abenheni         ###   ########.fr        #
+#    Updated: 2023/09/09 11:58:02 by abenheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phone
 CC = c++
 RM = rm -f
-CFLAGS = -w
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC =  main.cpp PhoneBook.cpp Contact.cpp
 OBJ = $(SRC:%.cpp=%.o)
 all : $(NAME)
@@ -23,7 +23,7 @@ $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS)  -c $< -o $@
 clean : 
 	$(RM) $(OBJ)
-fclean : clean
+fclean : clean   
 	$(RM) $(NAME)
-re : fclean all
+ 
 
