@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:06:43 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/09 12:44:39 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:04:49 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 #include <iomanip>
 class Contact {
     private :
-        std :: string firstName;
-        std :: string lastName;
-        std :: string nickname;
-        std :: string phoneNumber;
-        std :: string darkestSecret;
-        int id;
+        std::string     firstName;
+        std::string     lastName;
+        std::string     nickname;
+        std::string     phoneNumber;
+        std::string     darkestSecret;
+        int             id;
     public :
         void fillData(int i);
         int  checkNumber(std :: string n);

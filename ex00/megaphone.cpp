@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 12:48:22 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/09 12:53:37 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:59:40 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int main(int ac, char **av)
             while (av[i][j])
             {
                 if (av[i][j] >= 'a' && av[i][j] <= 'z')
-                    av[i][j] = av[i][j] - 32;
+                    av[i][j] = std :: toupper(av[i][j]);
                 std :: cout << av[i][j];
                 j++;
             }
             i++;
         }
     }
-    std :: cout << "\n";
+    std :: cout << std::endl;
     return (0);
 }
