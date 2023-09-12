@@ -6,7 +6,7 @@
 /*   By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 17:06:43 by abenheni          #+#    #+#             */
-/*   Updated: 2023/09/11 13:04:49 by abenheni         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:14:34 by abenheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ class Contact {
         int  getId();
         void printInfo();
         void clearContent();
-        void getLineProtected(std :: string input , std :: string out);
 };
 
 #endif

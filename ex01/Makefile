@@ -6,7 +6,7 @@
 #    By: abenheni <abenheni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 12:49:58 by abenheni          #+#    #+#              #
-#    Updated: 2023/09/11 14:22:09 by abenheni         ###   ########.fr        #
+#    Updated: 2023/09/12 11:07:51 by abenheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,5 +25,6 @@ clean :
 	$(RM) $(OBJ)
 fclean : clean
 	$(RM) $(NAME)
+
  
 
